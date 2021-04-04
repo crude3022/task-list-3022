@@ -7,8 +7,16 @@
     <table class="table table-bordered">
         
         <tr>
+            <th>担当者名</th>
+            <td>{{ $tasklist->name }}</td>
+        </tr>
+        <tr>
             <th>内容</th>
             <td>{{ $tasklist->content }}</td>
+        </tr>
+        <tr>
+            <th>進行状況</th>
+            <td>{{ $tasklist->status }}</td>
         </tr>
     </table>
     

@@ -47,12 +47,16 @@ class TasksController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'name' => 'required|max:10',
             'content' => 'required|max:255',
+            'status' => 'required|max:30',
         ]);
           // メッセージを作成
         $tasklist = new Task;
         $tasklist->id = $request->id;
+        $tasklist->name = $request->name;
         $tasklist->content = $request->content;
+        $tasklist->status = $request->status;
         $tasklist->save();
 
         // トップページへリダイレクトさせる
@@ -101,14 +105,18 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // バリデーション
         $request->validate([
+            'name' => 'required|max:10',
             'content' => 'required|max:255',
+            'status' => 'required|max:30',
         ]);
        // idの値でメッセージを検索して取得
         $tasklist = Task::findOrFail($id);
         // メッセージを更新
+        $tasklist->id = $request->id;
+        $tasklist->name = $request->name;
         $tasklist->content = $request->content;
+        $tasklist->status = $request->status;
         $tasklist->save();
 
         // トップページへリダイレクトさせる

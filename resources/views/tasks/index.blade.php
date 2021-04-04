@@ -9,7 +9,9 @@
             <thead>
                 <tr>
                     <th>id</th>
+                    <th>担当者名</th>
                     <th>内容</th>
+                    <th>進行状況</th>
                 </tr>
             </thead>
             <tbody>
@@ -17,7 +19,9 @@
                 <tr>
                     {{-- メッセージ詳細ページへのリンク --}}
                     <td>{!! link_to_route('tasks.show',  $tasklist->id , ['task'=> $tasklist->id]) !!}</td>
+                    <td>{{ $tasklist->name }}</td>
                     <td>{{ $tasklist->content }}</td>
+                    <td>{{ $tasklist->status }}</td>
                 </tr>
                 @endforeach
             </tbody>
