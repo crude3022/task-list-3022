@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>メッセージ一覧</h1>
+<h1>タスク一覧</h1>
 
     @if (count($tasklists) > 0)
         <table class="table table-striped">
@@ -29,6 +29,6 @@
     @endif
     
      {{-- メッセージ作成ページへのリンク --}}
-    {!! link_to_route('tasks.create', '新規メッセージの投稿', [], ['class' => 'btn btn-primary']) !!}
+    {!! link_to_route('tasks.create', '新規タスクの投稿', [], ['class' => 'btn btn-primary']) !!}
 
 @endsection
