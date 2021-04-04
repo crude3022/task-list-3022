@@ -53,7 +53,6 @@ class TasksController extends Controller
         ]);
           // メッセージを作成
         $tasklist = new Task;
-        $tasklist->id = $request->id;
         $tasklist->name = $request->name;
         $tasklist->content = $request->content;
         $tasklist->status = $request->status;
@@ -113,7 +112,6 @@ class TasksController extends Controller
        // idの値でメッセージを検索して取得
         $tasklist = Task::findOrFail($id);
         // メッセージを更新
-        $tasklist->id = $request->id;
         $tasklist->name = $request->name;
         $tasklist->content = $request->content;
         $tasklist->status = $request->status;
