@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <h1>id: {{ $tasklist->id }} のメッセージ編集ページ</h1>
 
     <div class="row">
